@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
   devtool: 'cheap-module-source-map',
@@ -32,8 +33,15 @@ const config = {
       minimize: true,
       debug: false,
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false,
+          beautify: false,
+        },
+        compress: true
+      },
+      parallel: true
     }),
     new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
     new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
@@ -49,12 +57,15 @@ const config = {
       },
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             'css-loader',
-            { loader: 'sass-loader', query: { sourceMap: false } },
+              { 
+                loader: 'sass-loader', 
+                query: { sourceMap: false },                 
+              },            
           ],
           publicPath: '../'
         }),
