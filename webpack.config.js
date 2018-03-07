@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
-const PORT = 3100;
+const PORT = 3000;
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
@@ -16,6 +16,7 @@ const config = {
     'webpack/hot/only-dev-server',
     './main.js',
     './assets/scss/main.scss',
+    '../node_modules/bootstrap/dist/css/bootstrap.css',
   ],
 
   output: {
@@ -59,9 +60,7 @@ const config = {
             'css-loader',
             {
               loader: 'sass-loader',
-              query: {
-                sourceMap: false,
-              },
+              query: { sourceMap: false },
             },
           ],
           publicPath: '../'
@@ -150,7 +149,7 @@ const config = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
-    new OpenBrowserPlugin({ url: 'http://localhost:' + PORT }),
+    // new OpenBrowserPlugin({ url: 'http://localhost:' + PORT }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };

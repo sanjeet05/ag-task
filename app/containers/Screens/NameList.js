@@ -39,8 +39,12 @@ class NameList extends Component {
               <th>Agency Name</th> 
             </tr>
           </thead>
-          <tbody>   
-            {List} 
+          <tbody>
+            {
+              data.length !==0
+              ? List
+              : <div style={{margin: '10px'}}> Result not found... </div>
+            }
           </tbody>  
         </Table>                          
       </div>  

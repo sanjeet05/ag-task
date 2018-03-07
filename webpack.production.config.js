@@ -11,6 +11,7 @@ const config = {
   entry: [
     './main.js',
     './assets/scss/main.scss',
+    '../node_modules/bootstrap/dist/css/bootstrap.css',
   ],
 
   context: resolve(__dirname, 'app'),
@@ -43,8 +44,12 @@ const config = {
       },
       parallel: true
     }),
-    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
-    new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
+    new webpack.DefinePlugin(
+      { 'process.env': { NODE_ENV: JSON.stringify('production') } }
+    ),
+    new ExtractTextPlugin(
+      { filename: './styles/style.css', disable: false, allChunks: true }
+    ),
     new CopyWebpackPlugin([{ from: './vendors', to: 'vendors' }]),
   ],
 
@@ -56,7 +61,7 @@ const config = {
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         // exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',

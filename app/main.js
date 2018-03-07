@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './config/Root';
 
 // import bootstrap css
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 const render = (Component) => {
