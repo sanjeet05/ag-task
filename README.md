@@ -1,7 +1,5 @@
 # ES6 React boilerplate using Webpack
 
-[![Travis](https://img.shields.io/travis/KleoPetroff/react-webpack-boilerplate/master.svg?style=flat-square)](https://github.com/KleoPetroff/react-webpack-boilerplate) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
 Simple and optimized React boilerplate. It includes: 
 
 - [x] React 16.2.0
@@ -54,7 +52,3 @@ The coverage report consists of an HTML reporter, which can be viewed in the bro
 ## Production code
 
 Run `npm run production`. The production-ready code will be located under `dist` folder.
-
-## Licence
-
-_react-webpack-boilerplate_ is available under MIT.
