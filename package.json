@@ -4,7 +4,8 @@
   "description": "Minimalistic ES6 React boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "node server.js",
     "clean": "rimraf dist",
     "production": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./app/**/**.js",
@@ -37,6 +38,7 @@
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0-beta.3",
     "cross-env": "5.1.2",
+    "express": "^4.15.2",
     "local-storage": "^1.4.2",
     "lodash": "^4.17.4",
     "react": "16.2.0",

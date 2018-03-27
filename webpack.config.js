@@ -12,7 +12,7 @@ const config = {
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:'+PORT,
+    'webpack-dev-server/client?http://0.0.0.0:'+PORT,
     'webpack/hot/only-dev-server',
     './main.js',
     './assets/scss/main.scss',
