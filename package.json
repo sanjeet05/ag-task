@@ -3,11 +3,11 @@
   "version": "2.1.0",
   "description": "Minimalistic ES6 React boilerplate",
   "main": "index.js",
-  "scripts": {
-    "dev": "webpack-dev-server",
+  "scripts": {    
     "start": "node server.js",
+    "dev": "webpack-dev-server",
     "clean": "rimraf dist",
-    "production": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
+    "prod": "cross-env NODE_ENV=production npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./app/**/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
