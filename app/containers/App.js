@@ -1,23 +1,19 @@
 import React from 'react';
 import NavBar from './NavBar/NavBar';
 
-import { Container } from 'reactstrap';
-
 const App = (props) => {
   return (
-    <div>
-      <Container>
-        <NavBar />
-        <div style={{marginLeft: '20px'}}>
-          {
-            (() => {
-              return (
-                props.children
-              );
-            }) ()
-          }
-        </div>
-      </Container>
+    <div>      
+      <NavBar />
+      <div className="main_container">
+        {
+          (() => {
+            return (
+              props.children
+            );
+          }) ()
+        }
+      </div>      
     </div>
   );
 };

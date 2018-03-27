@@ -5,3 +5,20 @@ body {
   color: $color;
   background: $bg_color !important;
 }
+
+.top_navbar{
+  background-color: #ebf4fb !important;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.top_logo_name{
+  color: #F37623 !important;
+  font-weight: 700;
+}
+
+.main_container{   
+  padding-top: 65px; 
+}

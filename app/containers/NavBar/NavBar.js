@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import { Link } from "react-router-dom";
 import {
+    Container,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -18,11 +19,17 @@ class NavBar extends Component {
 
   render() {    
     return (
-        <div>
-            <Navbar color="faded" light expand="md">
-                <NavbarBrand href="/" style={{color: '#F37623', fontWeight: '700'}}>Agentdesks Task</NavbarBrand>                            
-            </Navbar>         
-        </div>        
+    <div className="top_navbar">
+        <Container>
+          <Navbar color="faded" light expand="md">
+            <Link to="/">
+              <div className="navbar-brand top_logo_name">
+                Agentdesks Task
+              </div>
+            </Link>
+          </Navbar>
+        </Container>
+    </div>              
       
     );
   }
