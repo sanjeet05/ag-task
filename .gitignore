@@ -49,6 +49,7 @@ crashlytics-build.properties
 
 # NodeJS modules folder
 node_modules
+package-lock.json
 
 # npm debug log
 npm-debug.log
